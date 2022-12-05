@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import './reset.css';
 import './App.css';
+import {useEffect, useState} from "react"
+import SearchBox from './SearchBox';
+import MainBox from './MainBox';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [user, setUser] = useState("octocat")
+  const [data, setData] = useState()
+  const [search, setSearch] = useState("")
+  const [click, setClick] = useState(false)
+  const [inputValue, setInputValue] = useState("")
+  const [info, setInfo] = useState(false)
+
+
+  function change(){
+    setUser(inputValue)
+  }
+  
+
+  function getInfo(){
+    
+    fetch(`https://api.github.com/users/${user}`)
+    .then((response) => response.json())
+    .then((json) => {
+      //console.log(json);
+      setData(json)
+      setInfo(true)
+      console.log(user);
+    })}
+
+    useEffect(()=>{
+      getInfo()
+    }, [user])
+
+return (
+  <div>
+    <SearchBox inputValue={inputValue} changeInputValue={(e)=>setInputValue(e.target.value)} change={change} />
+    {info ? <MainBox data={data} /> : ""}
+  </div>
+)
+   
+  
 }
 
 export default App;
