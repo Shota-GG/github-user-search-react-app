@@ -3,6 +3,9 @@ import './App.css';
 import {useEffect, useState} from "react"
 import SearchBox from './SearchBox';
 import MainBox from './MainBox';
+import MiddleBox from './MiddleBox';
+import BottomBox from './BottomBox';
+import HeadBox from './HeadBox';
 
 
 
@@ -36,13 +39,30 @@ function App() {
     }, [user])
 
 return (
-  <div>
-    <SearchBox inputValue={inputValue} changeInputValue={(e)=>setInputValue(e.target.value)} change={change} />
-    {info ? <MainBox data={data} /> : ""}
+  <div className='body'>
+    <div className='container'>
+      <div>
+        <HeadBox />
+      </div>
+      <div>
+        <SearchBox inputValue={inputValue} changeInputValue={(e)=>setInputValue(e.target.value)} change={change} />
+      </div>
+      <div style={{backgroundColor: "#FEFEFE", width: "730px", borderRadius: "15px", height: "419px", display: "flex", flexDirection: "column", justifyContent: "space-around",}}>
+        <div>
+        {info ? <MainBox data={data} /> : ""}
+        </div>
+        <div>
+          {info ? <MiddleBox data={data} /> : ""}
+        </div>
+        <div>
+          {info ? <BottomBox data={data} /> : ""} 
+        </div>
+      </div>
+      
   </div>
-)
-   
+  </div>
   
+) 
 }
 
 export default App;
