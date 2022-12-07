@@ -1,14 +1,14 @@
 .body {
   width: 100vw;
   height: 100vh;
-  background-color: #F2F2F2;
+  background-color: #F6F8FF;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .container {
-  width: 1440px;
-  height: 900px;
-  background-color: #F6F8FF;
+  width: 730px;
+  height: 586px;
+  /* background-color: #F6F8FF; */
   
 }

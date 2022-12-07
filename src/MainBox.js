@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function MainBox(props) {
-    console.log(props);
   return (
     <div style={main}>
       <div>
@@ -10,13 +9,16 @@ export default function MainBox(props) {
       <div>
         <h1 style={nam}>{props.data.name}</h1>
         <p style={log}>@{props.data.login}</p>
-        <p></p>
+        {props.data.bio==null ? <p>This profile has no bio</p> : <p>{props.data.bio}</p>}
       </div>
       <div>
-        <p style={creat}>{props.data.created_at}</p>
+        <p style={creat}>{(new Date(props.data.created_at).toLocaleString('en-GB', { year:"numeric",  day:"numeric", month:"short",}))
+        // .toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})
+        }
+        </p>
       </div>
         
-        
+      {/* new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})  */}
         
     </div>
   )

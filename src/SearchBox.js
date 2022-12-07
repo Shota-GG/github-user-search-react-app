@@ -5,7 +5,7 @@ export default function SearchBox(props) {
   return (
     <div style={div}>
         <img src={img} alt="" />
-        <input style={inpt} type="text" placeholder='Search GitHub username…' value={props.inputValue} 
+        <input style={props.click? {backgroundColor: "#1E2A47", width: "550px", height: "50px", border: "none", outline: "none", fontSize: "18px"} : {backgroundColor: "#FEFEFE", width: "550px", height: "50px", border: "none", outline: "none", fontSize: "18px"}} type="text" placeholder='Search GitHub username…' value={props.inputValue} 
          onChange={(e)=> {props.changeInputValue(e)}}
          />
         <button style={btn} onClick={props.change}>Search</button>

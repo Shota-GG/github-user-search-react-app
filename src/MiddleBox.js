@@ -26,5 +26,6 @@ let middle = {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginLeft: "202px"
+    marginLeft: "202px",
+    lineHeight: "40px"
 }
