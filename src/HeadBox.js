@@ -40,15 +40,17 @@ let div = {
     marginBottom: "35px"
 }
 let swich = { 
-    width: "60px",
+    width: "70px",
     height: "15px",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    gap: "10px",
+    cursor: "pointer"
 }
-let h1 = {
-  fontSize: "26px"
-}
+// let h1 = {
+//   fontSize: "26px"
+// }
 // let p = {
 //   fontSize: "13px",
 //   color: "#697C9A"

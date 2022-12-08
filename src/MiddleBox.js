@@ -2,18 +2,18 @@ import React from 'react'
 
 export default function MiddleBox(props) {
   return (
-    <div style={middle}>
+    <div style={props.click ? {...middle, backgroundColor: "#141D2F", color: "#ffffff"} : {...middle, backgroundColor: "#F6F8FF"}}>
         <div>
-            <p>Repos</p>
-            <h1>{props.data.public_repos}</h1>
+            <p style={{fontSize: "13px"}}>Repos</p>
+            <h1 style={{fontSize: "22px"}}>{props.data.public_repos}</h1>
         </div>
         <div>
-            <p>Followers</p>
-            <h1>{props.data.followers}</h1>
+            <p style={{fontSize: "13px"}}>Followers</p>
+            <h1 style={{fontSize: "22px"}}>{props.data.followers}</h1>
         </div>
         <div>
-            <p>Followers</p>
-            <h1>{props.data.following}</h1>
+            <p style={{fontSize: "13px"}}>Followers</p>
+            <h1 style={{fontSize: "22px"}}>{props.data.following}</h1>
         </div>
      </div>
   )

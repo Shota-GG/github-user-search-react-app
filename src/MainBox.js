@@ -2,17 +2,17 @@ import React from 'react'
 
 export default function MainBox(props) {
   return (
-    <div style={main}>
+    <div style={props.click ? {...main, backgroundColor: "#1E2A47", color: "#ffffff"} : {...main, backgroundColor: "#FEFEFE"}}>
       <div>
         <img style={img} src={props.data.avatar_url} alt="" />
       </div>
-      <div>
+      <div style={{lineHeight: "30px"}}>
         <h1 style={nam}>{props.data.name}</h1>
         <p style={log}>@{props.data.login}</p>
         {props.data.bio==null ? <p>This profile has no bio</p> : <p>{props.data.bio}</p>}
       </div>
       <div>
-        <p style={creat}>{(new Date(props.data.created_at).toLocaleString('en-GB', { year:"numeric",  day:"numeric", month:"short",}))
+        <p style={creat}>joined {(new Date(props.data.created_at).toLocaleString('en-GB', { year:"numeric",  day:"numeric", month:"short",}))
         // .toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})
         }
         </p>
